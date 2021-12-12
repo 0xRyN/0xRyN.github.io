@@ -13,7 +13,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+p {
     margin: 0;
     font-weight: normal;
 }
@@ -27,6 +28,15 @@ h5 {
     grid-template-columns: 1fr;
     place-items: center;
 }
+
+.error-p {
+    color: red;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
 /* 
     FOR BUTTON
     Source: https://codepen.io/nourabusoud/pen/ypZzMM 
@@ -36,7 +46,7 @@ h5 {
     display: inline-block;
     font-size: 1.2em;
     padding: 1em 3em;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     -webkit-appearance: none;
     appearance: none;
     background-color: #ff0081;
@@ -144,7 +154,6 @@ h5 {
 .group {
     position: relative;
     margin-top: 45px;
-    margin-bottom: 45px;
 }
 input {
     font-size: 18px;

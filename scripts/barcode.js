@@ -163,11 +163,21 @@ let b;
 let inp;
 let btn;
 let cnv;
+let error;
 
 function btnClicked() {
-    if (inp.value().length >= 12) {
-        b = new Barcode(inp.value(), 0, 0, width);
+    const regex = /[0-9]{12}/;
+    let code = inp.value().match(regex);
+    if (code != null) {
+        error.removeClass("error-p");
+        error.html(
+            "C'est fait ! N'hésitez pas à le scanner pour vérifier sa fonctionnalité."
+        );
+        b = new Barcode(code[0], 0, 0, width);
         loop();
+    } else {
+        error.addClass("error-p");
+        error.html("Entrez 12 chiffres !!!!");
     }
 }
 
@@ -175,6 +185,8 @@ function setup() {
     cnv = createCanvas(380, 200);
     background("#FFFFFF");
     noStroke();
+
+    error = select("#error-code");
 
     inp = select("#barcode-input");
 
