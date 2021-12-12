@@ -171,7 +171,7 @@ function btnClicked() {
     if (code != null) {
         error.removeClass("error-p");
         error.html(
-            "C'est fait ! N'hésitez pas à le scanner pour vérifier sa fonctionnalité."
+            "C'est fait ! N'hésitez pas à scanner un produit français (avec par exemple Yuka) pour vérifier sa fonctionnalité."
         );
         b = new Barcode(code[0], 0, 0, width);
         loop();
