@@ -1,9 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="styles/index.css" />
-        <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+        <script src="libs/p5.min.js"></script>
+        <script defer src="scripts/util.js"></script>
         <script src="scripts/barcode.js"></script>
     </head>
-    <body></body>
+    <body>
+        <div class="container" id="container">
+            <h1>Créez votre code-barres EAN-13 gratuitement !</h1>
+            <h3>
+                Entrez vos 12 numéros dans le formulaire ci-dessous et cliquez
+                sur le bouton.
+            </h3>
+            <h3>
+                Préfixe (2 chiffres) + Num Participant (5 chiffres) + Num
+                Article (5 chiffres)
+            </h3>
+
+            <div class="group">
+                <input
+                    style="box-sizing: border-box"
+                    type="text"
+                    id="barcode-input"
+                    maxlength="12"
+                    required
+                />
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Code-barres</label>
+            </div>
+            <button id="barcode-btn" class="bubbly-button">
+                Générer mon code-barres
+            </button>
+        </div>
+    </body>
 </html>

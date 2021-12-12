@@ -162,34 +162,27 @@ class Barcode {
 let b;
 let inp;
 let btn;
-
-function inputChanged() {
-    console.log("you are typing" + this.value());
-}
+let cnv;
 
 function btnClicked() {
     if (inp.value().length >= 12) {
-        b = new Barcode(inp.value(), 20, 50, 285);
+        b = new Barcode(inp.value(), 0, 0, width);
         loop();
     }
 }
 
 function setup() {
-    createCanvas(500, 500);
+    cnv = createCanvas(380, 200);
     background("#FFFFFF");
     noStroke();
 
-    inp = createInput();
-    inp.attribute("type", "text");
-    inp.attribute("placeholder", "Entrez 12 chiffres");
-    inp.attribute("maxlength", "12");
-    inp.position(20, 0);
-    inp.size(200);
-    inp.input(inputChanged);
+    inp = select("#barcode-input");
 
-    btn = createButton("Create barcode");
-    btn.position(220, 0);
+    btn = select("#barcode-btn");
     btn.mousePressed(btnClicked);
+
+    btn.parent("container");
+    cnv.parent("container");
 }
 
 function draw() {
